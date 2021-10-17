@@ -1,0 +1,34 @@
+.footer-container {
+  width: 100vw;
+  height: 400px;
+  background-color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.footer-logo-container {
+  display: flex;
+  justify-content: center;
+}
+.footer-logo {
+  margin: 10px;
+}
+.footer-website-name {
+  font-family: DM Sans;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 32px;
+}
+.footer-description {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+}
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+}

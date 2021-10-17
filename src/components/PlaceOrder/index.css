@@ -1,0 +1,57 @@
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100vw;
+  height: 100vh;
+}
+.payment-bg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 546px;
+  height: 376px;
+  margin-top: 130px;
+  background: #ffffff;
+  box-shadow: 0px 4.00734px 40.0734px rgba(23, 31, 70, 0.16);
+  border-radius: 12px;
+}
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.success {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: #1e293b;
+}
+.payment-success {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #64748b;
+  text-align: center;
+}
+.go-to-home {
+  background: #f7931e;
+  border-radius: 8px;
+  height: 32px;
+  width: 132px;
+  color: white;
+  border: none;
+}
+.place-order-button {
+  background: #f7931e;
+  border-radius: 8px;
+  color: white;
+  height: 32px;
+  width: 100px;
+  border: none;
+}

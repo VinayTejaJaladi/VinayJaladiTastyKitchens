@@ -1,0 +1,10 @@
+.carousel-container {
+  height: 400px;
+  width: 90vw;
+  padding: 40px;
+  margin: auto;
+}
+.offers-image {
+  height: 320px;
+  width: 100%;
+}

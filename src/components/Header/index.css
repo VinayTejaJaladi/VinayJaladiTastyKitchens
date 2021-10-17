@@ -1,0 +1,73 @@
+.nav-header {
+  display: flex;
+  justify-content: center;
+  height: 96px;
+  width: 100vw;
+  background: #f8fafc;
+}
+.navbar-content {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.link-container {
+  text-decoration: none;
+}
+.header-logo-container {
+  display: flex;
+}
+.header-website-logo {
+  height: 39px;
+  width: 49px;
+  margin-top: 32px;
+  margin-right: 18px;
+}
+.header-website-name {
+  font-family: DM Sans;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px;
+  color: #f7931e;
+  width: 172px;
+  height: 32px;
+  margin-top: 32px;
+  text-decoration: none;
+}
+.menu-button-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  margin-right: 30px;
+  list-style: none;
+}
+.navbar-home {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+}
+.home-true {
+  color: #f7931e;
+}
+.cart-true {
+  color: #f7931e;
+}
+.navbar-cart {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+}
+.logout-button {
+  background: #f7931e;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  height: 32px;
+  width: 73px;
+}
