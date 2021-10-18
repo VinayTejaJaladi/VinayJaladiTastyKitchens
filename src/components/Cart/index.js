@@ -60,7 +60,6 @@ class Cart extends Component {
                     minus="decrement-quantity"
                     plus="increment-quantity"
                     amount="item-quantity"
-                    number={each.quantity}
                     renderCart={this.reRenderCart}
                   />
                 </div>
@@ -114,7 +113,6 @@ class Cart extends Component {
   render() {
     const {cartData} = this.state
     const emptyView = cartData === null || cartData.length === 0
-    console.log(cartData)
     return <>{emptyView ? this.renderEmptyView() : this.renderCartPage()}</>
   }
 }

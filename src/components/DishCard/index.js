@@ -26,7 +26,6 @@ const DishCard = props => {
             minus="decrement-count"
             plus="increment-count"
             amount="active-count"
-            number={0}
             renderCart="undefined"
           />
         </div>

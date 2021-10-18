@@ -6,8 +6,15 @@ class Counter extends Component {
   state = {count: 0}
 
   componentDidMount() {
-    const {number} = this.props
-    this.setState({count: number})
+    const {dish} = this.props
+    const {id} = dish
+    const cartData = JSON.parse(localStorage.getItem('cartData'))
+    if (cartData !== null) {
+      const thisDish = cartData.filter(each => each.id === id)
+      if (thisDish.length !== 0) {
+        this.setState({count: thisDish[0].quantity})
+      }
+    }
   }
 
   onDecrement = () => {
@@ -37,7 +44,6 @@ class Counter extends Component {
     }
     const itemDetails = {...dish, quantity: 1}
     cartData.push(itemDetails)
-    console.log(cartData)
     localStorage.setItem('cartData', JSON.stringify(cartData))
     this.setState({count: 1})
   }
