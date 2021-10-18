@@ -1,4 +1,4 @@
-.bg-container {
+.desktop-bg-container {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -19,10 +19,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 456px;
-  height: 523px;
-  left: 165px;
-  top: 250px;
+  width: 60%;
+  height: 70%;
   border-radius: 8px;
   background: #fefeff;
   box-shadow: 0px 8px 40px rgba(7, 7, 7, 0.08);
@@ -42,7 +40,6 @@
   font-weight: bold;
   font-size: 24px;
   color: #f7931e;
-  line-height: 32px;
 }
 .login-heading {
   font-family: DM Sans;
@@ -53,7 +50,7 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  width: 360px;
+  width: 80%;
 }
 .username-input-container {
   display: flex;
@@ -104,6 +101,48 @@
   border-radius: 8px;
   height: 40px;
   border: none;
-  margin-top: 32px;
+  margin-top: 5%;
   color: white;
+}
+
+.mobile-bg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  height: 100vh;
+}
+.mobile-top-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 60%;
+  width: 100%;
+  margin: auto none;
+}
+.mobile-login-heading {
+  font-size: 25px;
+  margin: 0px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  font-family: DM Sans;
+  font-style: normal;
+  color: #0f172a;
+}
+.mobile-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 40%;
+}
+@media screen and (max-width: 425px) {
+  .desktop-bg-container {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .mobile-bg-container {
+    display: none;
+  }
 }

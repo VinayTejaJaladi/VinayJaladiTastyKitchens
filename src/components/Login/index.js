@@ -1,6 +1,6 @@
-import Cookies from 'js-cookie'
 import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
+import Cookies from 'js-cookie'
 import './index.css'
 
 class Login extends Component {
@@ -47,60 +47,106 @@ class Login extends Component {
   renderLoginPage = () => {
     const {username, password, showError} = this.state
     return (
-      <div className="bg-container">
-        <div className="login-form-bg-container">
-          <div className="login-form-container">
-            <div className="logo-container">
-              <img
-                src="https://res.cloudinary.com/dhhj6sruk/image/upload/v1634219946/Frame_274_mbnkbw.jpg"
-                className="website-logo"
-                alt="website logo"
-              />
-              <h1 className="website-name">Tasty Kitchens</h1>
-            </div>
-            <h1 className="login-heading">Login</h1>
-            <form className="form-container" onSubmit={this.onSubmitLogin}>
-              <div className="username-input-container">
-                <label htmlFor="username" className="username-label">
-                  USERNAME
-                </label>
-                <input
-                  type="text"
-                  id="username"
-                  className="username-input-field"
-                  value={username}
-                  onChange={this.onChangeUsername}
-                />
-              </div>
-              <div className="password-input-container">
-                <label htmlFor="password" className="password-label">
-                  PASSWORD
-                </label>
-                <input
-                  type="password"
-                  id="password"
-                  className="password-input-field"
-                  value={password}
-                  onChange={this.onChangePassword}
-                />
-              </div>
-              {showError && (
-                <p className="error-message">
-                  Please enter a valid Username & Password
-                </p>
-              )}
-              <button type="submit" className="login-button">
-                Login
-              </button>
-            </form>
+      <>
+        <div className="mobile-bg-container">
+          <div className="mobile-top-container">
+            <img
+              src="https://res.cloudinary.com/dhhj6sruk/image/upload/v1634583217/Rectangle_1457mobileloginbg_aycn8w.jpg"
+              className="mobile-website-logo"
+              alt="website login"
+            />
+            <h1 className="mobile-login-heading">Login</h1>
           </div>
+          <form className="mobile-form-container" onSubmit={this.onSubmitLogin}>
+            <div className="username-input-container">
+              <label htmlFor="mobile-username" className="username-label">
+                USERNAME
+              </label>
+              <input
+                type="text"
+                id="mobile-username"
+                className="username-input-field"
+                value={username}
+                onChange={this.onChangeUsername}
+              />
+            </div>
+            <div className="password-input-container">
+              <label htmlFor="mobile-password" className="password-label">
+                PASSWORD
+              </label>
+              <input
+                type="password"
+                id="mobile-password"
+                className="password-input-field"
+                value={password}
+                onChange={this.onChangePassword}
+              />
+            </div>
+            {showError && (
+              <p className="error-message">
+                Please enter a valid Username & Password
+              </p>
+            )}
+            <button type="submit" className="login-button">
+              Login
+            </button>
+          </form>
         </div>
-        <img
-          src="https://res.cloudinary.com/dhhj6sruk/image/upload/v1634216973/Rectangle_1456_pb1rmh.jpg"
-          className="website-login-image"
-          alt="website login"
-        />
-      </div>
+        <div className="desktop-bg-container">
+          <div className="login-form-bg-container">
+            <div className="login-form-container">
+              <div className="logo-container">
+                <img
+                  src="https://res.cloudinary.com/dhhj6sruk/image/upload/v1634219946/Frame_274_mbnkbw.jpg"
+                  className="website-logo"
+                  alt="website logo"
+                />
+                <h1 className="website-name">Tasty Kitchens</h1>
+              </div>
+              <h1 className="login-heading">Login</h1>
+              <form className="form-container" onSubmit={this.onSubmitLogin}>
+                <div className="username-input-container">
+                  <label htmlFor="username" className="username-label">
+                    USERNAME
+                  </label>
+                  <input
+                    type="text"
+                    id="username"
+                    className="username-input-field"
+                    value={username}
+                    onChange={this.onChangeUsername}
+                  />
+                </div>
+                <div className="password-input-container">
+                  <label htmlFor="password" className="password-label">
+                    PASSWORD
+                  </label>
+                  <input
+                    type="password"
+                    id="password"
+                    className="password-input-field"
+                    value={password}
+                    onChange={this.onChangePassword}
+                  />
+                </div>
+                {showError && (
+                  <p className="error-message">
+                    Please enter a valid Username & Password
+                  </p>
+                )}
+                <button type="submit" className="login-button">
+                  Login
+                </button>
+              </form>
+            </div>
+          </div>
+          <img
+            src="https://res.cloudinary.com/dhhj6sruk/image/upload/v1634216973/Rectangle_1456_pb1rmh.jpg"
+            className="website-login-image"
+            alt="website login"
+          />
+        </div>
+      </>
     )
   }
 
