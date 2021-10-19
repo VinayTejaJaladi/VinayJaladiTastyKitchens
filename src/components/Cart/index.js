@@ -4,12 +4,11 @@ import {BiRupee} from 'react-icons/bi'
 import Header from '../Header'
 import Footer from '../Footer'
 import Counter from '../Counter'
-import PlaceOrder from '../PlaceOrder'
 
 import './index.css'
 
 class Cart extends Component {
-  state = {cartData: []}
+  state = {cartData: [], payment: false}
 
   componentDidMount() {
     const cartData = JSON.parse(localStorage.getItem('cartData'))
@@ -32,11 +31,16 @@ class Cart extends Component {
     return total
   }
 
-  renderCartPage = () => {
+  onCLickPlace = () => {
+    const emptyList = []
+    localStorage.setItem('cartData', JSON.stringify(emptyList))
+    this.setState({payment: true})
+  }
+
+  renderCartItems = () => {
     const {cartData} = this.state
     return (
       <>
-        <Header currentRoute="cart" />
         <div className="cart-container">
           <ul className="cart-items-list">
             <li key="titles-row" className="list-headings">
@@ -79,11 +83,49 @@ class Cart extends Component {
               </p>
             </li>
             <li key="place-order" className="place-order-item">
-              <PlaceOrder />
+              <button
+                type="button"
+                className="place-order-button"
+                onClick={this.onCLickPlace}
+              >
+                Place Order
+              </button>
             </li>
           </ul>
         </div>
         <Footer />
+      </>
+    )
+  }
+
+  renderPaymentPage = () => (
+    <div className="payment-bg-container">
+      <div className="payment-container">
+        <img
+          src="https://res.cloudinary.com/dhhj6sruk/image/upload/v1634468688/Vectorsuccess_f7vm3h.jpg"
+          className="success-image"
+          alt="success"
+        />
+        <h1 className="success">Payment Successful</h1>
+        <p className="payment-success">
+          Thank you for ordering
+          <br /> Your payment is successfully completed.
+        </p>
+        <Link to="/">
+          <button type="button" className="go-to-home">
+            Go To Home Page
+          </button>
+        </Link>
+      </div>
+    </div>
+  )
+
+  renderCartPage = () => {
+    const {payment} = this.state
+    return (
+      <>
+        <Header currentRoute="cart" />
+        {payment ? this.renderPaymentPage() : this.renderCartItems()}
       </>
     )
   }

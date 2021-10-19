@@ -4,7 +4,7 @@ import Cookies from 'js-cookie'
 import './index.css'
 
 class Login extends Component {
-  state = {username: '', password: '', showError: false}
+  state = {username: '', password: '', showError: false, errorMsg: ''}
 
   onChangeUsername = event => {
     this.setState({username: event.target.value})
@@ -22,8 +22,7 @@ class Login extends Component {
   }
 
   onSubmitFailure = errorMsg => {
-    console.log(errorMsg)
-    this.setState({showError: true})
+    this.setState({showError: true, errorMsg})
   }
 
   onSubmitLogin = async event => {
@@ -45,53 +44,9 @@ class Login extends Component {
   }
 
   renderLoginPage = () => {
-    const {username, password, showError} = this.state
+    const {username, password, showError, errorMsg} = this.state
     return (
       <>
-        <div className="mobile-bg-container">
-          <div className="mobile-top-container">
-            <img
-              src="https://res.cloudinary.com/dhhj6sruk/image/upload/v1634583217/Rectangle_1457mobileloginbg_aycn8w.jpg"
-              className="mobile-website-logo"
-              alt="website login"
-            />
-            <h1 className="mobile-login-heading">Login</h1>
-          </div>
-          <form className="mobile-form-container" onSubmit={this.onSubmitLogin}>
-            <div className="username-input-container">
-              <label htmlFor="mobile-username" className="username-label">
-                USERNAME
-              </label>
-              <input
-                type="text"
-                id="mobile-username"
-                className="username-input-field"
-                value={username}
-                onChange={this.onChangeUsername}
-              />
-            </div>
-            <div className="password-input-container">
-              <label htmlFor="mobile-password" className="password-label">
-                PASSWORD
-              </label>
-              <input
-                type="password"
-                id="mobile-password"
-                className="password-input-field"
-                value={password}
-                onChange={this.onChangePassword}
-              />
-            </div>
-            {showError && (
-              <p className="error-message">
-                Please enter a valid Username & Password
-              </p>
-            )}
-            <button type="submit" className="login-button">
-              Login
-            </button>
-          </form>
-        </div>
         <div className="desktop-bg-container">
           <div className="login-form-bg-container">
             <div className="login-form-container">
@@ -129,11 +84,7 @@ class Login extends Component {
                     onChange={this.onChangePassword}
                   />
                 </div>
-                {showError && (
-                  <p className="error-message">
-                    Please enter a valid Username & Password
-                  </p>
-                )}
+                {showError && <p className="error-message">{errorMsg}</p>}
                 <button type="submit" className="login-button">
                   Login
                 </button>

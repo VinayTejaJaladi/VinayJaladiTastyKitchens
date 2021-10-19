@@ -9,6 +9,13 @@
   justify-content: center;
   align-items: center;
 }
+.restaurants-loader-container {
+  height: 400px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .restaurants-container {
   display: flex;
   flex-direction: column;
@@ -101,7 +108,14 @@
   width: 32px;
   color: #334155;
 }
-.pagination-content {
+.pagination-current-page {
+  font-family: Bree Serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: #334155;
+}
+.pagination-total-pages {
   font-family: Bree Serif;
   font-style: normal;
   font-weight: normal;

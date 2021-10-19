@@ -44,3 +44,10 @@
 .restaurant-rating {
   font-size: 15px;
 }
+.restaurant-reviews-count {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  color: #64748b;
+}

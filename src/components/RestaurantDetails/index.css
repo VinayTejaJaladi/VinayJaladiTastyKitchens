@@ -8,6 +8,13 @@
   margin-top: 30px;
   background-image: url('https://res.cloudinary.com/dhhj6sruk/image/upload/v1634479186/Rectangle_1399_hh1gtt.jpg');
 }
+.restaurant-details-loader {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .restaurant-item-image {
   height: 280px;
   width: 445px;

@@ -135,14 +135,3 @@
   width: 80%;
   height: 40%;
 }
-@media screen and (max-width: 425px) {
-  .desktop-bg-container {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 425px) {
-  .mobile-bg-container {
-    display: none;
-  }
-}

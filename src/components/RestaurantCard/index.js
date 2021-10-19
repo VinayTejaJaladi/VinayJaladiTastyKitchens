@@ -5,14 +5,18 @@ import './index.css'
 const RestaurantCard = props => {
   const {details} = props
   const {name, cuisine, userRating, imageUrl, id} = details
-  const {rating, ratingColor} = userRating
+  const {rating, ratingColor, totalReviews} = userRating
   const color = {
     backgroundColor: {ratingColor},
   }
 
   return (
-    <Link to={`restaurants/${id}`} className="restaurants-link-item">
-      <li testid="restaurant-item" className="card-container">
+    <Link
+      to={`restaurant/${id}`}
+      testid="restaurant-item"
+      className="restaurants-link-item"
+    >
+      <li className="card-container">
         <img src={imageUrl} className="restaurant-image" alt="restaurant" />
         <div className="restaurant-details-container">
           <h1 className="restaurant-name">{name}</h1>
@@ -22,6 +26,9 @@ const RestaurantCard = props => {
               <AiFillStar className="star-icon" color={color} />
             </p>
             <p className="restaurant-rating">{rating}</p>
+            <h1 className="restaurant-reviews-count">
+              ({totalReviews} rating)
+            </h1>
           </div>
         </div>
       </li>

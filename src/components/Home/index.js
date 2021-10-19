@@ -199,7 +199,7 @@ class Home extends Component {
               </div>
               <div className="sort-by-container">
                 <BsFilterLeft color="#475569" />
-                <h1 className="sort-by">Sort by</h1>
+                <p className="sort-by">Sort By</p>
                 <select
                   value={sortInput}
                   className="sort-container"
@@ -228,9 +228,13 @@ class Home extends Component {
               >
                 <AiOutlineLeftSquare className="left-icon" />
               </button>
-              <p className="pagination-content" testid="active-page-number">
-                {currentPage} of {totalPages}
+              <p
+                className="pagination-current-page"
+                testid="active-page-number"
+              >
+                {currentPage}
               </p>
+              <p className="pagination-total-pages">of {totalPages}</p>
               <button
                 type="button"
                 testid="pagination-right-button"

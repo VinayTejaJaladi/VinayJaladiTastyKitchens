@@ -129,7 +129,10 @@ class RestaurantItem extends Component {
       <>
         <Header currentRoute="home" />
         {isLoading ? (
-          <div testid="restaurants-details-loader">
+          <div
+            className="restaurant-details-loader"
+            testid="restaurant-details-loader"
+          >
             <Loader type="Oval" color="#F7931E" height="50" width="50" />
           </div>
         ) : (

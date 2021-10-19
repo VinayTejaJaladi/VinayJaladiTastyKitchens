@@ -3,7 +3,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import Login from './components/Login'
 import Home from './components/Home'
 import Cart from './components/Cart'
-import RestaurantItem from './components/RestaurantItem'
+import RestaurantDetails from './components/RestaurantDetails'
 import NotFound from './components/NotFound'
 import './App.css'
 
@@ -25,7 +25,11 @@ const App = () => (
     <Route exact path="/login" component={Login} />
     <ProtectedRoute exact path="/" component={Home} />
     <ProtectedRoute exact path="/cart" component={Cart} />
-    <ProtectedRoute exact path="/restaurants/:id" component={RestaurantItem} />
+    <ProtectedRoute
+      exact
+      path="/restaurant/:id"
+      component={RestaurantDetails}
+    />
     <Route path="/not-found" component={NotFound} />
     <Redirect to="/not-found" />
   </Switch>
