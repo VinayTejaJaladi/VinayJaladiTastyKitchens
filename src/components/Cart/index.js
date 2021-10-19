@@ -56,7 +56,7 @@ class Cart extends Component {
                     alt="dish item"
                     className="cart-dish-image"
                   />
-                  <p className="cart-dish-name">{each.name}</p>
+                  <h1 className="cart-dish-name">{each.name}</h1>
                 </div>
                 <div className="counter-container">
                   <Counter
@@ -76,11 +76,11 @@ class Cart extends Component {
               </li>
             ))}
             <li key="order-total" className="order-total">
-              <p className="heading">Order Total: </p>
-              <p className="total-price">
+              <h1 className="order-total-heading">Order Total: </h1>
+              <div className="total-cost-container">
                 <BiRupee />
-                <>{this.calculateTotal()}</>
-              </p>
+                <p className="total-price">{this.calculateTotal()}</p>
+              </div>
             </li>
             <li key="place-order" className="place-order-item">
               <button

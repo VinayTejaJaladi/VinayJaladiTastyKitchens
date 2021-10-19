@@ -88,6 +88,17 @@
   justify-content: space-between;
   border-top: 1px dashed #cbd2d9;
 }
+.order-total-heading {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: #3e4c59;
+}
+.total-cost-container {
+  display: flex;
+  align-items: center;
+}
 .total-price {
   display: flex;
   align-items: center;

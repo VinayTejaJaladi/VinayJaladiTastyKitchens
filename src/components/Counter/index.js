@@ -77,19 +77,21 @@ class Counter extends Component {
     const {minus, plus, amount} = this.props
 
     return (
-      <div className="buttons-container">
+      <div key={`${minus}-${plus}`} className="buttons-container">
         <button
           testid={minus}
+          key={minus}
           className="minus-button"
           type="button"
           onClick={this.onDecrement}
         >
           -
         </button>
-        <div className="amount-container" testid={amount}>
+        <p key={amount} className="amount-container" testid={amount}>
           {count}
-        </div>
+        </p>
         <button
+          key={plus}
           testid={plus}
           className="plus-button"
           type="button"
