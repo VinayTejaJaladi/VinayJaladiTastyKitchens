@@ -23,7 +23,7 @@ class Cart extends Component {
   calculateTotal = () => {
     const {cartData} = this.state
     const totalPrices = cartData.map(each => {
-      const items = each.quantity
+      const items = each.count
       const price = each.cost
       return items * price
     })
@@ -49,7 +49,7 @@ class Cart extends Component {
               <p className="price-heading">Price</p>
             </li>
             {cartData.map(each => (
-              <li key={each.id} className="cart-list-item">
+              <li testid="cartItem" key={each.id} className="cart-list-item">
                 <div className="img-name-container">
                   <img
                     src={each.imageUrl}
@@ -69,9 +69,7 @@ class Cart extends Component {
                 </div>
                 <div className="price-container">
                   <BiRupee color="#F7931E" />
-                  <p testid="total-price" className="price">
-                    {each.quantity * each.cost}
-                  </p>
+                  <p className="price">{each.count * each.cost}.00</p>
                 </div>
               </li>
             ))}
@@ -79,7 +77,9 @@ class Cart extends Component {
               <h1 className="order-total-heading">Order Total: </h1>
               <div className="total-cost-container">
                 <BiRupee />
-                <p className="total-price">{this.calculateTotal()}</p>
+                <p testid="total-price" className="total-order-price">
+                  {this.calculateTotal()}.00
+                </p>
               </div>
             </li>
             <li key="place-order" className="place-order-item">

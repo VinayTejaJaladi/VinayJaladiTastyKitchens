@@ -22,6 +22,7 @@ const DishCard = props => {
         </div>
         <div className="counter-container">
           <Counter
+            key={`counter ${name}`}
             dish={details}
             minus="decrement-count"
             plus="increment-count"
