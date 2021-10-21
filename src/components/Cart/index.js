@@ -23,7 +23,7 @@ class Cart extends Component {
   calculateTotal = () => {
     const {cartData} = this.state
     const totalPrices = cartData.map(each => {
-      const items = each.count
+      const items = each.quantity
       const price = each.cost
       return items * price
     })
@@ -69,7 +69,7 @@ class Cart extends Component {
                 </div>
                 <div className="price-container">
                   <BiRupee color="#F7931E" />
-                  <p className="price">{each.count * each.cost}.00</p>
+                  <p className="price">{each.quantity * each.cost}.00</p>
                 </div>
               </li>
             ))}
