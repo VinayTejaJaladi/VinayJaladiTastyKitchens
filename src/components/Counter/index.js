@@ -3,7 +3,7 @@ import {Component} from 'react'
 import './index.css'
 
 class Counter extends Component {
-  state = {quantity: 0}
+  state = {count: 0}
 
   componentDidMount() {
     const {dish} = this.props
@@ -12,18 +12,18 @@ class Counter extends Component {
     if (cartData !== null) {
       const thisDish = cartData.filter(each => each.id === id)
       if (thisDish.length !== 0) {
-        this.setState({quantity: thisDish[0].count})
+        this.setState({quantity: thisDish[0].quantity})
       }
     }
   }
 
   onDecrement = () => {
-    const {quantity} = this.state
-    if (quantity === 1) {
-      this.setState({quantity: 0}, this.updateCartData)
+    const {count} = this.state
+    if (count === 1) {
+      this.setState({count: 0}, this.updateCartData)
     } else {
       this.setState(
-        prevState => ({quantity: prevState.quantity - 1}),
+        prevState => ({count: prevState.count - 1}),
         this.updateCartData,
       )
     }
@@ -31,7 +31,7 @@ class Counter extends Component {
 
   onIncrement = () => {
     this.setState(
-      prevState => ({quantity: prevState.quantity + 1}),
+      prevState => ({count: prevState.count + 1}),
       this.updateCartData,
     )
   }
@@ -42,10 +42,10 @@ class Counter extends Component {
     if (cartData === null) {
       cartData = []
     }
-    const itemDetails = {...dish, count: 1}
+    const itemDetails = {...dish, quantity: 1}
     cartData.push(itemDetails)
     localStorage.setItem('cartData', JSON.stringify(cartData))
-    this.setState({quantity: 1})
+    this.setState({count: 1})
   }
 
   renderCartPage = () => {
@@ -57,11 +57,11 @@ class Counter extends Component {
 
   updateCartData = () => {
     const {dish} = this.props
-    const {quantity} = this.state
+    const {count} = this.state
     const cartData = JSON.parse(localStorage.getItem('cartData'))
     let updatedCartData = []
     if (quantity !== 0) {
-      const itemDetails = {...dish, count: quantity}
+      const itemDetails = {...dish, quantity: count}
       const remainingItems = cartData.filter(each => each.id !== dish.id)
       updatedCartData = [...remainingItems, itemDetails]
     } else {
@@ -73,7 +73,7 @@ class Counter extends Component {
   }
 
   renderCounter = () => {
-    const {quantity} = this.state
+    const {count} = this.state
     const {minus, plus, amount} = this.props
 
     return (
@@ -87,7 +87,7 @@ class Counter extends Component {
           -
         </button>
         <p className="amount-container" testid={amount}>
-          {quantity}
+          {count}
         </p>
         <button
           testid={plus}
@@ -110,8 +110,8 @@ class Counter extends Component {
   )
 
   render() {
-    const {quantity} = this.state
-    const showAdd = quantity === 0
+    const {count} = this.state
+    const showAdd = count === 0
     return (
       <div className="add-remove">
         {showAdd ? this.renderAddButton() : this.renderCounter()}
